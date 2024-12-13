@@ -1,43 +1,24 @@
-# Main Page
+<h1 align="center">
+  
+ArchWiki - OCD Edition  
 
-![Arch Linux Logo](https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg)
+<img src="https://archlinux.org/static/logos/archlinux-logo-light-scalable.1ae4cc2e2469.svg" width="200" alt="Arch Linux Logo" />
 
-Welcome to the ArchWiki - OCD Edition: your alternative source for Arch Linux documentation on the web.
+</h1>
 
-## 1. The Distribution
+Welcome to **ArchWiki - OCD Edition**: your meticulously organized and alternative source for Arch Linux documentation. Designed for enthusiasts and beginners alike, this wiki offers a seamless guide to installaing Arch Linux.  
 
-### [Installation Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Installation/installation.md)
-A comprehensive guide to installing Arch Linux.
+<a href="https://archlinux.org/" target="_blank"><img alt="Arch" src="https://img.shields.io/badge/ARCH-1793D1?style=flat-square" width="65"></a> <a href="https://Justus0405.github.io/Arch-Wiki/" target="_blank"><img alt="Wiki" src="https://img.shields.io/badge/WIKI-98c379?style=flat-square" width="58"></a>
 
-### [Pacman Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Pacman/pacman.md)
-All Pacman commands, from basic to advanced.
+## About  
 
-### [Mirrorlist Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Pacman/mirrorlist.md)
-Optimize and manage your mirrorlist for faster package downloads.
+This project aims to provide a structured and user-friendly alternative to the traditional Arch Wiki. The **OCD Edition** ensures clarity and completeness while maintaining Arch Linux's philosophy of simplicity and customization.
 
-### [PipeWire Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Pipewire/pipewire.md)
-A guide for installing PipeWire manually.
+## Explore the Documentation  
 
-### [Guide for Installing a Desktop Environment](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Desktop/desktop.md)
-Instructions for setting up a desktop environment with a guide to essential fonts.
+Visit the full ArchWiki - OCD Edition at: [Arch-Wiki Documentation](https://Justus0405.github.io/Arch-Wiki/)
 
-## 2. Nvidia
 
-### [Nvidia Driver Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Nvidia/nvidia.md)
-Instructions for installing Nvidia drivers using only the latest methods.
+[check]: https://github.com/Justus0405/Arch-Wiki/actions/workflows/deploy.yml/badge.svg
+[link]: https://github.com/Justus0405/Arch-Wiki/actions/workflows/deploy.yml
 
-### [Nvidiainstall](https://github.com/Justus0405/Nvidiainstall)
-A fully automated method for installing Nvidia drivers on Arch Linux.
-
-### [Nvidia Deprecated List](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Nvidia/nvidia-depricated.md)
-A list of deprecated Nvidia driver installation methods.
-
-## 3. Essentials
-
-### [NTP Guide](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Essentials/ntp.md)
-Instructions for Installing and Configuring NTP on Arch Linux.
-
-## 4. Laptop
-
-### [Battery Optimization](https://github.com/Justus0405/Arch-Wiki/blob/main/src/Laptop/laptop.md)
-A comprehensive guide to optimizing battery life for laptops running Arch Linux.
