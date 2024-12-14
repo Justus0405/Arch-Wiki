@@ -14,7 +14,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Guide", link: "/getting-started/introduction" },
+      { text: "Guide", link: "/1-getting-started/inside-iso.md" },
       {
         text: "Resources",
         items: [

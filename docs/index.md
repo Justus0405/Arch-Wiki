@@ -16,3 +16,6 @@ hero:
     - theme: alt
       text: Github
       link: https://github.com/Justus0405/Arch-Wiki
+    - theme: alt
+      text: Contributors
+      link: /9-extra/contributors.md
