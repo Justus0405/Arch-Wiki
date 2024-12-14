@@ -45,6 +45,7 @@ export default defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
+          { text: 'Keyring Issues', link: '/installation/keyrings.md' },
           { text: 'Base Installation', link: '/installation/baseinstall.md' },
           { text: 'Post-Installation Configuration', link: '/installation/post-installation.md' },
           { text: 'Bootloader Setup', link: '/installation/grubinstall.md' },
