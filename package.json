@@ -1,6 +1,10 @@
 {
+  "name": "arch-wiki",
+  "type": "module",
+  "dependencies": {
+    "@catppuccin/vitepress": "^0.1.0"
+  },
   "devDependencies": {
-    "@catppuccin/vitepress": "^0.1.0",
     "vitepress": "^1.5.0"
   },
   "scripts": {
