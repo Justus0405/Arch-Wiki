@@ -31,7 +31,7 @@ sudo pacman -S gnome gnome-tweaks gdm gst-libav pipewire-jack noto-fonts-emoji
 
 ## Set Your Keyboard Layout
 
-> [!INFO]
+> [!WARNING]
 > This step is crucial if you are using a non-US keyboard
 > because you wouldnt be able to login later if not set correctly
 

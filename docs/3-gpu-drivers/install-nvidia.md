@@ -1,7 +1,7 @@
 # Installing NVIDIA Drivers on Arch Linux
 
 > [!INFO]
-> There is a too called [Nvidiainstall](https://github.com/Justus0405/Nvidiainstall)
+> There is a tool called [Nvidiainstall](https://github.com/Justus0405/Nvidiainstall)
 > Which automatically installs and configures Nvidia Drivers for your system.
 
 ## Install NVIDIA Packages
