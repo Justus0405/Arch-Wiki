@@ -97,6 +97,7 @@ mount --mkdir /dev/nvme0n1p1 /mnt/boot
 > Install the essential system packages:
 
 ```bash
+pacman -Syy
 pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
 ```
 
