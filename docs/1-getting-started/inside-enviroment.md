@@ -95,10 +95,12 @@ echo "arch" > /etc/hostname
 ## Configure Keyboard Layout for Console
 
 > [!INFO]
-> Set the console keyboard layout (replace `de-latin1` with yours):
+> Set the console keyboard layout (replace `de` with yours).
+> Laptops use latin1 because the layout is slightly different.
+> For example, `de-latin1`.
 
 ```bash
-echo "KEYMAP=de-latin1" > /etc/vconsole.conf
+echo "KEYMAP=de" > /etc/vconsole.conf
 ```
 
 ## Create a New User

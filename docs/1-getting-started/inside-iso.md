@@ -4,10 +4,12 @@
 
 > [!TIP]
 > If your keyboard layout isn’t USA, use `loadkeys` to switch it.
-> For example, German keyboards use `de-latin1`.
+> For example, German keyboards use `de`.
+> Laptops use latin1 because the layout is slightly different.
+> For example, `de-latin1`.
 
 ```sh
-loadkeys de-latin1
+loadkeys de
 ```
 
 ## 2. List Your Drives

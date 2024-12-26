@@ -35,8 +35,12 @@ sudo pacman -S gnome gnome-tweaks gdm gst-libav pipewire-jack noto-fonts-emoji
 > This step is crucial if you are using a non-US keyboard
 > because you wouldnt be able to login later if not set correctly
 
+> [!NOTE]
+> Laptops use latin1 because the layout is slightly different.
+> For example, `de-latin1`.
+
 ```bash
-sudo localectl set-keymap de-latin1
+sudo localectl set-keymap de
 ```
 
 ## Enable the Login Manager
