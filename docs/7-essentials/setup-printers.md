@@ -8,7 +8,7 @@
 
 <br>
 
-# Install necessary dependencies
+# Step 1: Install necessary dependencies
 
 ## Install CUPS and a GUI Printer Manager
 
@@ -36,7 +36,11 @@ sudo pacman -S hplip
 
 <br>
 
-# Setup your printer
+> [!TIP]
+> After setting up your printer
+> it is recommended to restart your computer
+
+# Step 2: Setup your printer
 
 ## For HP printers
 
