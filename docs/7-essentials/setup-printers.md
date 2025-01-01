@@ -6,6 +6,10 @@
 > Be sure to install the right drivers. For a list of drivers for different brands,
 > visit: https://wiki.archlinux.org/title/CUPS/Printer-specific_problems
 
+<br>
+
+# Install necessary dependencies
+
 ## Install CUPS and a GUI Printer Manager
 
 ```bash
@@ -30,15 +34,27 @@ sudo usermod -aG lp $USER
 sudo pacman -S hplip
 ```
 
-## Open the printer settings to add your printer
+<br>
+
+# Setup your printer
+
+## For HP printers
+
+```bash
+hp-setup -i
+```
+
+## For any other, open the printer settings and add your printer
+
+```bash
+system-config-printer
+```
 
 > [!TIP]
 > You can view, stop and delete printer jobs when right-clicking on the printer
 > and selecting "View Print Queue"
 
-```bash
-system-config-printer
-```
+<br>
 
 # Additional Tips & Tricks
 
