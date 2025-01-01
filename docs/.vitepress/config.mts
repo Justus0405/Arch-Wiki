@@ -85,7 +85,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Fonts', link: '/7-essentials/install-fonts.md' },
-          { text: 'NTP Setup', link: '/7-essentials/ntp.md' }
+          { text: 'NTP Setup', link: '/7-essentials/ntp.md' },
+          { text: 'Printers Setup', link: '/7-essentials/setup-printers.md' }
         ]
       },
       {
