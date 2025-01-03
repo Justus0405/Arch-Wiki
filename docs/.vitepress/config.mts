@@ -99,10 +99,11 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Special Thanks',
+        text: 'Extra',
         collapsible: true,
         collapsed: false,
         items: [
+          { text: 'Benchmarking', link: '/9-extra/benchmarking.md' },
           { text: 'Contributors', link: '/9-extra/contributors.md' }
         ]
       }
