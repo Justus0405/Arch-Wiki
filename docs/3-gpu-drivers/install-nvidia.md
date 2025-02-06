@@ -16,33 +16,33 @@ sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia nvidia-settings l
 
 - Open the `mkinitcpio.conf` file:
 
-   ```bash
-   sudo nano /etc/mkinitcpio.conf
-   ```
+  ```bash
+  sudo nano /etc/mkinitcpio.conf
+  ```
 
 - Find the `MODULES` line and add the following modules:
 
-   ```plaintext
-   MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
-   ```
+  ```plaintext
+  MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+  ```
 
 - Remove `kms` from the `HOOKS` line to avoid conflicts. It might look something like this:
 
-   ```plaintext
-   HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
-   ```
+  ```plaintext
+  HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
+  ```
 
 **Save and exit the file (Ctrl + X, then Y, then Enter).**
 
 ## Create NVIDIA Configuration File
 
-***Create the `/etc/modprobe.d/nvidia.conf` file:***
+**_Create the `/etc/modprobe.d/nvidia.conf` file:_**
 
 ```bash
 sudo nano /etc/modprobe.d/nvidia.conf
 ```
 
-***Add the following line to the file:***
+**_Add the following line to the file:_**
 
 ```plaintext
 options nvidia_drm modeset=1 fbdev=1
@@ -54,21 +54,21 @@ options nvidia_drm modeset=1 fbdev=1
 
 - Open the GRUB configuration file:
 
-   ```bash
-   sudo nano /etc/default/grub
-   ```
+  ```bash
+  sudo nano /etc/default/grub
+  ```
 
 - Find the line starting with `GRUB_CMDLINE_LINUX_DEFAULT` and update it to include the following options:
 
-   ```plaintext
-   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nvidia_drm.modeset=1"
-   ```
+  ```plaintext
+  GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nvidia_drm.modeset=1"
+  ```
 
 - Save and exit the file (Ctrl + X, then Y, then Enter).
 
 ## Regenerate initramfs
 
-***Run the following command to regenerate the initramfs with your changes:***
+**_Run the following command to regenerate the initramfs with your changes:_**
 
 ```bash
 sudo mkinitcpio -P
@@ -76,7 +76,7 @@ sudo mkinitcpio -P
 
 ## Update GRUB
 
-***Run the following command to update the GRUB configuration:***
+**_Run the following command to update the GRUB configuration:_**
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -84,9 +84,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Reboot
 
-***Finally, reboot your system to apply the changes:***
+**_Finally, reboot your system to apply the changes:_**
 
 ```bash
 sudo reboot
 ```
-

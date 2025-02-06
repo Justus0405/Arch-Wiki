@@ -1,6 +1,6 @@
 # Arch Linux Laptop Battery Tweaks Guide
 
-> [!INFO] 
+> [!INFO]
 > This guide helps improve battery life on Arch Linux laptops.
 
 ## 1. Battery Optimization
@@ -11,43 +11,43 @@
 ### 1.1. Using `auto-cpufreq` (Recommended)
 
 > [!INFO]
-> `auto-cpufreq` adjusts CPU frequency and power based on system load.
+> auto-cpufreq adjusts CPU frequency and power based on system load.
 
 - **Install `auto-cpufreq`**:
 
-    ```bash
-    yay -S auto-cpufreq
-    ```
+  ```bash
+  yay -S auto-cpufreq
+  ```
 
 - **Test in live mode**:
 
-    ```bash
-    sudo auto-cpufreq --live
-    ```
+  ```bash
+  sudo auto-cpufreq --live
+  ```
 
 - **Enable automatic startup**:
 
-    ```bash
-    sudo auto-cpufreq --install
-    ```
+  ```bash
+  sudo auto-cpufreq --install
+  ```
 
 - **Monitor system behavior**:
 
-    ```bash
-    sudo auto-cpufreq --monitor
-    ```
+  ```bash
+  sudo auto-cpufreq --monitor
+  ```
 
 - **View CPU stats**:
 
-    ```bash
-    sudo auto-cpufreq --stats
-    ```
+  ```bash
+  sudo auto-cpufreq --stats
+  ```
 
 - **Uninstall**:
 
-    ```bash
-    sudo auto-cpufreq --remove
-    ```
+  ```bash
+  sudo auto-cpufreq --remove
+  ```
 
 ### 1.2. Using TLP (Advanced Power Management)
 
@@ -56,74 +56,27 @@
 
 - **Install TLP**:
 
-    ```bash
-    sudo pacman -S tlp tlp-rdw
-    ```
+  ```bash
+  sudo pacman -S tlp tlp-rdw
+  ```
 
 - **Start and enable TLP**:
 
-    ```bash
-    sudo systemctl enable tlp --now
-    ```
+  ```bash
+  sudo systemctl enable tlp --now
+  ```
 
 - **Check TLP status**:
 
-    ```bash
-    sudo tlp-stat
-    ```
+  ```bash
+  sudo tlp-stat
+  ```
 
 - **Optional: Install GUI for TLP**:
 
-    ```bash
-    yay -S tlpui
-    ```
-
-### 1.3. CPU Scaling Governor
-
-> [!INFO]
-> Balance performance and battery use by adjusting the CPU governor.
-
-- **Install `cpupower`**:
-
-    ```bash
-    sudo pacman -S cpupower
-    ```
-
-- **View current CPU governor**:
-
-    ```bash
-    cpupower frequency-info
-    ```
-
-- **Set CPU governor**:
-
-    - For balanced performance:
-
-        ```bash
-        sudo cpupower frequency-set -g schedutil
-        ```
-
-    - For battery efficiency:
-
-        ```bash
-        sudo cpupower frequency-set -g powersave
-        ```
-
-- **Make the governor setting persistent**:
-
-    Edit the `cpupower` configuration:
-
-    ```bash
-    sudo nano /etc/default/cpupower
-    ```
-
-    Add `GOVERNOR="schedutil"` or `GOVERNOR="powersave"`.
-
-- **Enable and start the service**:
-
-    ```bash
-    sudo systemctl enable cpupower --now
-    ```
+  ```bash
+  yay -S tlpui
+  ```
 
 ## 2. Adjust Swap Usage (Swappiness)
 
@@ -132,29 +85,29 @@
 
 - **Check current swappiness**:
 
-    ```bash
-    cat /proc/sys/vm/swappiness
-    ```
+  ```bash
+  cat /proc/sys/vm/swappiness
+  ```
 
 - **Set swappiness to 10**:
 
-    Edit `/etc/sysctl.conf`:
+  Edit `/etc/sysctl.conf`:
 
-    ```bash
-    sudo nano /etc/sysctl.conf
-    ```
+  ```bash
+  sudo nano /etc/sysctl.conf
+  ```
 
-    Add:
+  Add:
 
-    ```bash
-    vm.swappiness=10
-    ```
+  ```bash
+  vm.swappiness=10
+  ```
 
 - **Apply changes**:
 
-    ```bash
-    sudo sysctl -p
-    ```
+  ```bash
+  sudo sysctl -p
+  ```
 
 ## 3. File System Performance (noatime)
 
@@ -163,21 +116,21 @@
 
 - **Edit `/etc/fstab`**:
 
-    ```bash
-    sudo nano /etc/fstab
-    ```
+  ```bash
+  sudo nano /etc/fstab
+  ```
 
-    Add `noatime` to the root partition:
+  Add `noatime` to the root partition:
 
-    ```bash
-    UUID=<your-disk-UUID> / ext4 defaults,noatime 0 1
-    ```
+  ```bash
+  UUID=<your-disk-UUID> / ext4 defaults,noatime 0 1
+  ```
 
-    Reboot to apply changes:
+  Reboot to apply changes:
 
-    ```bash
-    sudo reboot
-    ```
+  ```bash
+  sudo reboot
+  ```
 
 ## 4. System Monitoring Tools
 
@@ -185,32 +138,32 @@
 
 - **Install `powertop`**:
 
-    ```bash
-    sudo pacman -S powertop
-    ```
+  ```bash
+  sudo pacman -S powertop
+  ```
 
 - **Run `powertop` in interactive mode**:
 
-    ```bash
-    sudo powertop
-    ```
+  ```bash
+  sudo powertop
+  ```
 
 - **Optimize settings**:
 
-    ```bash
-    sudo powertop --auto-tune
-    ```
+  ```bash
+  sudo powertop --auto-tune
+  ```
 
 ### 4.2. `btop` or `htop` (Resource Monitoring)
 
 - **Install `btop`**:
 
-    ```bash
-    sudo pacman -S btop
-    ```
+  ```bash
+  sudo pacman -S btop
+  ```
 
 - **Install `htop`**:
 
-    ```bash
-    sudo pacman -S htop
-    ```
+  ```bash
+  sudo pacman -S htop
+  ```

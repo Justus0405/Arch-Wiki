@@ -14,7 +14,6 @@ systemctl enable NetworkManager
 > [!INFO]
 > Edit `pacman.conf` to optimize package management.
 
-
 ```bash
 nano /etc/pacman.conf
 ```
@@ -23,6 +22,7 @@ nano /etc/pacman.conf
 > Navigate `nano` with arrow keys. Save with `CTRL + O` and exit with `CTRL + X`. To exit without saving, press `CTRL + X` and `n`.
 
 Add these lines:
+
 ```bash
 [options]
 ILoveCandy
@@ -67,13 +67,16 @@ hwclock --systohc
 > Set the system's language and encoding.
 
 1. Edit `locale.gen` to uncomment your locale:
+
    ```bash
    nano /etc/locale.gen
    ```
+
    > [!TIP]
    > Use `CTRL + W` to search for your locale.
 
 2. Generate the locale:
+
    ```bash
    locale-gen
    ```
@@ -121,6 +124,7 @@ passwd justus
 > This gives `sudo` access to users in the `wheel` group.
 
 1. Open the `sudoers` file:
+
    ```bash
    EDITOR=nano visudo
    ```

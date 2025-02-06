@@ -37,6 +37,7 @@ sudo pacman -S hplip
 <br>
 
 # Step 2: Setup your printer
+
 > [!NOTE]
 > After setting up your printer
 > it is recommended to restart your computer

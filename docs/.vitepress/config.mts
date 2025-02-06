@@ -95,6 +95,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Prevent Lid closing', link: '/8-laptop/prevent-lid.md' },
+          { text: 'Change Governor', link: '/8-laptop/cpu-governor.md' },
           { text: 'Battery Optimization', link: '/8-laptop/battery-optimizations.md' }
         ]
       },

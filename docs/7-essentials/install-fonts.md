@@ -3,7 +3,6 @@
 > [!INFO]
 > If you're missing some fonts, here are the essential ones to install for better language and character support.
 
-
 - **`noto-fonts`, `noto-fonts-emoji`, `noto-fonts-cjk`, `noto-fonts-extra`**:
   Covers a wide range of languages and special characters.
 

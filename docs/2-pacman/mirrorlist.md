@@ -11,36 +11,46 @@ Optimize your mirrors for faster package updates. Choose one of these methods:
 `reflector` automatically updates and ranks mirrors.
 
 ### Install Reflector
+
 ```bash
 sudo pacman -S reflector
 ```
 
 ### Backup Your Mirrorlist
+
 ```bash
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 
 ### Use Reflector to Rank Mirrors
+
 Run this command (replace `'Germany'` with your country):
+
 ```bash
 sudo reflector --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
+
 - `--country`: Mirrors in your location.
 - `--age 12`: Use mirrors synced within 12 hours.
 - `--protocol https`: Use HTTPS mirrors.
 - `--sort rate`: Rank mirrors by speed.
 
 ### Verify the Mirrorlist
+
 ```bash
 cat /etc/pacman.d/mirrorlist
 ```
 
 ### Automate Reflector (Optional)
+
 1. Create a configuration file:
+
    ```bash
    sudo nano /etc/xdg/reflector/reflector.conf
    ```
+
    Example:
+
    ```
    --country 'United States'
    --age 12
@@ -55,6 +65,7 @@ cat /etc/pacman.d/mirrorlist
    ```
 
 ### Refresh the Database
+
 ```bash
 sudo pacman -Syy
 ```
@@ -68,6 +79,7 @@ sudo pacman -Syy
 3. Generate and copy/download the mirrorlist.
 
 ### Backup and Replace the Mirrorlist
+
 1. Backup your current list:
    ```bash
    sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
@@ -82,6 +94,7 @@ sudo pacman -Syy
    ```
 
 ### Refresh the Database
+
 ```bash
 sudo pacman -Syy
 ```
@@ -91,16 +104,19 @@ sudo pacman -Syy
 `rankmirrors` ranks mirrors by speed.
 
 ### Install `pacman-contrib`
+
 ```bash
 sudo pacman -S pacman-contrib
 ```
 
 ### Backup Your Mirrorlist
+
 ```bash
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 
 ### Uncomment All Mirrors
+
 1. Edit the file:
    ```bash
    sudo nano /etc/pacman.d/mirrorlist
@@ -111,12 +127,15 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
    ```
 
 ### Rank the Mirrors
+
 Save the top 10 mirrors:
+
 ```bash
 rankmirrors -n 10 /etc/pacman.d/mirrorlist | sudo tee /etc/pacman.d/mirrorlist
 ```
 
 ### Refresh the Database
+
 ```bash
 sudo pacman -Syy
 ```

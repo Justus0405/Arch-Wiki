@@ -4,14 +4,13 @@
 > This guide will help you install the GNOME desktop environment on your system.
 > Most components like audio and multimedia support are handled automatically.
 
-
 ## Prerequisites
+
 Make sure your system is up to date before starting:
 
 ```bash
 sudo pacman -Syyu
 ```
-
 
 ## Install The Packages
 
@@ -27,7 +26,6 @@ Here’s what you need to install:
 ```bash
 sudo pacman -S gnome gnome-tweaks gdm gst-libav pipewire-jack noto-fonts-emoji
 ```
-
 
 ## Set Your Keyboard Layout
 
@@ -50,7 +48,6 @@ Set GDM (GNOME Display Manager) to start automatically on boot:
 ```bash
 sudo systemctl enable gdm
 ```
-
 
 ## Reboot and Enjoy!
 

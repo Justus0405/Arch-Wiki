@@ -1,5 +1,4 @@
-> [!NOTE]
-> **Only use this guide if you're facing keyring or package installation errors. If not, proceed with the base installation.**
+> [!NOTE] > **Only use this guide if you're facing keyring or package installation errors. If not, proceed with the base installation.**
 
 # Resolving Arch Linux Keyring Trust Issues
 
@@ -12,22 +11,22 @@ If you encounter issues with GPG keyring trust during your Arch Linux installati
 
 - **Sync the system clock**:
 
-    ```sh
-    sudo systemctl enable systemd-timesyncd --now
-    ```
+  ```sh
+  sudo systemctl enable systemd-timesyncd --now
+  ```
 
 - **Update the keyring**:
 
-   ```sh
-   sudo pacman -Sy archlinux-keyring
-   ```
+  ```sh
+  sudo pacman -Sy archlinux-keyring
+  ```
 
 - **Reinitialize the keyring** (if needed):
 
-   ```sh
-   sudo pacman-key --init
-   sudo pacman-key --populate archlinux
-   ```
+  ```sh
+  sudo pacman-key --init
+  sudo pacman-key --populate archlinux
+  ```
 
 - Try the installation again.
 
@@ -38,23 +37,23 @@ If you encounter issues with GPG keyring trust during your Arch Linux installati
 
 - **Remove the GPG database**:
 
-   ```sh
-   sudo rm -rf /etc/pacman.d/gnupg
-   ```
+  ```sh
+  sudo rm -rf /etc/pacman.d/gnupg
+  ```
 
 - **Reinitialize and populate the keyring**:
 
-   ```sh
-   sudo pacman-key --init
-   sudo pacman-key --populate archlinux
-   ```
+  ```sh
+  sudo pacman-key --init
+  sudo pacman-key --populate archlinux
+  ```
 
 - **Import and trust missing keys** (replace `<KEY_ID>` with the key ID):
 
-   ```sh
-   pacman-key --recv-keys <KEY_ID>
-   pacman-key --lsign-key <KEY_ID>
-   ```
+  ```sh
+  pacman-key --recv-keys <KEY_ID>
+  pacman-key --lsign-key <KEY_ID>
+  ```
 
 ## **Solution 3: Temporarily Disable Signature Verification**
 
@@ -63,22 +62,22 @@ If you encounter issues with GPG keyring trust during your Arch Linux installati
 
 - **Edit `/etc/pacman.conf`** and set `SigLevel = Never`:
 
-   ```ini
-   [options]
-   SigLevel = Never
-   ```
+  ```ini
+  [options]
+  SigLevel = Never
+  ```
 
 - **Update the keyring**:
 
-   ```sh
-   sudo pacman -Sy archlinux-keyring
-   ```
+  ```sh
+  sudo pacman -Sy archlinux-keyring
+  ```
 
 - **Re-enable signature checking** after resolving:
 
-   ```ini
-   SigLevel = Required DatabaseOptional
-   ```
+  ```ini
+  SigLevel = Required DatabaseOptional
+  ```
 
 ## **Solution 4: Use Reflector for Updated Mirrors**
 
@@ -87,18 +86,18 @@ If you encounter issues with GPG keyring trust during your Arch Linux installati
 
 - **Install Reflector**:
 
-   ```sh
-   sudo pacman -S reflector
-   ```
+  ```sh
+  sudo pacman -S reflector
+  ```
 
 - **Fetch the latest mirrors**:
 
-   ```sh
-   sudo reflector --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-   ```
+  ```sh
+  sudo reflector --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+  ```
 
 - **Update the system**:
 
-   ```sh
-   sudo pacman -Syyu
-   ```
+  ```sh
+  sudo pacman -Syyu
+  ```

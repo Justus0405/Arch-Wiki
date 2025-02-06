@@ -27,16 +27,19 @@ lsblk
 > This erases all data on the drive. Back up anything important first.
 
 ### For NVMe drives:
+
 ```bash
 gdisk /dev/nvme0n1
 ```
 
 ### For SATA or HDD drives:
+
 ```bash
 gdisk /dev/sda1
 ```
 
 **Steps:**
+
 1. Press `x` for expert mode.
 2. Press `z` to wipe the drive, confirming with `y`.
 
@@ -50,11 +53,13 @@ cfdisk /dev/nvme0n1
 ```
 
 Create these partitions:
+
 - **Boot Partition:** 1 GiB (EFI)
 - **Swap Partition:** 4 GiB
 - **System Partition:** Remaining space
 
 Example layout:
+
 ```
 p1 = 1GiB, EFI
 p2 = 4GiB, Linux Swap
@@ -64,17 +69,20 @@ p3 = Remaining, Linux Filesystem
 ## 5. Format the Partitions
 
 ### Format Boot Partition (FAT32):
+
 ```bash
 mkfs.fat -F 32 /dev/nvme0n1p1
 ```
 
 ### Set Up Swap Partition:
+
 ```bash
 mkswap /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 ```
 
 ### Format System Partition (EXT4):
+
 ```bash
 mkfs.ext4 /dev/nvme0n1p3
 ```
@@ -82,11 +90,13 @@ mkfs.ext4 /dev/nvme0n1p3
 ## 6. Mount Your Partitions
 
 ### Mount System Partition:
+
 ```bash
 mount /dev/nvme0n1p3 /mnt
 ```
 
 ### Mount Boot Partition:
+
 ```bash
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 ```
