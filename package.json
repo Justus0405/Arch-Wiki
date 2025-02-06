@@ -1,7 +1,4 @@
 {
-	"engines": {
-        "pnpm": ">=10.2.0"
-    },
 	"devDependencies": {
 	  "@catppuccin/vitepress": "^0.1.0",
 	  "vitepress": "^1.6.3"
