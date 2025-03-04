@@ -2,9 +2,10 @@
 
 ### Welcome to the ArchWiki - OCD Edition: your alternative source for Arch Linux documentation on the web.
 
-#### https://justus0405.github.io/Arch-Wiki/
+#### Online:
+### https://justus0405.github.io/Arch-Wiki/
 
-#### How to build yourself
+#### Build yourself:
 ```sh
 git clone https://github.com/Justus0405/Arch-Wiki.git
 cd Arch-Wiki/
