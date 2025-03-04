@@ -2,6 +2,14 @@
 
 ### Welcome to the ArchWiki - OCD Edition: your alternative source for Arch Linux documentation on the web.
 
+#### How to build yourself
+```sh
+git clone https://github.com/Justus0405/Arch-Wiki.git
+cd Arch-Wiki/
+pnpm i
+pnpm run docs:dev
+```
+
 ## Our Contributors
 <a href="https://github.com/Justus0405/Arch-Wiki/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Justus0405/Arch-Wiki&columns=15" />
