@@ -3,20 +3,40 @@
 > [!INFO]
 > If you're missing some fonts, here are the essential ones to install for better language and character support.
 
-- **`noto-fonts`, `noto-fonts-emoji`, `noto-fonts-cjk`, `noto-fonts-extra`**:
-  Covers a wide range of languages and special characters.
+<br>
 
-- **`ttf-source-code-pro`, `ttf-source-sans-pro`, `ttf-source-serif-pro`**:
-  High-quality fonts for Latin characters in monospace, sans-serif, and serif styles.
+Cover a wide range of languages and special characters.
 
-- **`ttf-adobe-source-han-sans-otc`, `ttf-adobe-source-han-serif-otc`**:
-  Great for East Asian languages (Chinese, Japanese, Korean), providing sans and serif fonts.
+```shell
+sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra
+```
 
-- **`ttf-hanazono`**:
-  Includes historical CJK characters for ancient scripts.
+High-quality fonts for Latin characters in monospace, sans-serif, and serif styles.
 
-- **`ttf-liberation`**:
-  Provides metric-compatible versions of Arial, Times New Roman, and Courier New for document consistency.
+```shell
+sudo pacman -S ttf-source-code-pro ttf-source-sans-pro ttf-source-serif-pro
+```
 
-- **`ttf-dejavu`**:
-  Often needed for games (like those from Valve) to prevent hard-to-read fallback text.
+Great for East Asian languages (Chinese, Japanese, Korean), providing sans and serif fonts.
+
+```shell
+sudo pacman -S ttf-adobe-source-han-sans-otc ttf-adobe-source-han-serif-otc
+```
+
+Includes historical CJK characters for ancient scripts.
+
+```shell
+sudo pacman -S ttf-hanazono
+```
+
+Provides metric-compatible versions of Arial, Times New Roman, and Courier New for document consistency.
+
+```shell
+sudo pacman -S ttf-liberation
+```
+
+Often needed for games (like those from Valve) to prevent hard-to-read fallback text.
+
+```shell
+sudo pacman -S ttf-dejavu
+```

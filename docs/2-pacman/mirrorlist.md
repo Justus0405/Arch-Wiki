@@ -2,9 +2,11 @@
 
 Optimize your mirrors for faster package updates. Choose one of these methods:
 
-- **Reflector**: Automatically find and rank mirrors (recommended).
-- **Mirrorlist Generator**: Select mirrors manually.
-- **Rankmirrors**: Rank mirrors by speed using `pacman-contrib`.
+> [!INFO]
+>
+> - `Reflector` → Automatically find and rank mirrors (recommended).
+> - `Mirrorlist Generator` → Select mirrors manually.
+> - `Rankmirrors` → Rank mirrors by speed using `pacman-contrib`.
 
 ## 1. Using Reflector (Recommended)
 
@@ -12,13 +14,13 @@ Optimize your mirrors for faster package updates. Choose one of these methods:
 
 ### Install Reflector
 
-```bash
+```shell
 sudo pacman -S reflector
 ```
 
 ### Backup Your Mirrorlist
 
-```bash
+```shell
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 
@@ -26,18 +28,20 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 Run this command (replace `'Germany'` with your country):
 
-```bash
+```shell
 sudo reflector --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
-- `--country`: Mirrors in your location.
-- `--age 12`: Use mirrors synced within 12 hours.
-- `--protocol https`: Use HTTPS mirrors.
-- `--sort rate`: Rank mirrors by speed.
+> [!INFO] Config Info:
+>
+> - `--country` → Mirrors in your location.
+> - `--age 12` → Use mirrors synced within 12 hours.
+> - `--protocol https` → Use HTTPS mirrors.
+> - `--sort rate` → Rank mirrors by speed.
 
 ### Verify the Mirrorlist
 
-```bash
+```shell
 cat /etc/pacman.d/mirrorlist
 ```
 
@@ -45,7 +49,7 @@ cat /etc/pacman.d/mirrorlist
 
 1. Create a configuration file:
 
-   ```bash
+   ```shell
    sudo nano /etc/xdg/reflector/reflector.conf
    ```
 
@@ -60,42 +64,44 @@ cat /etc/pacman.d/mirrorlist
    ```
 
 2. Enable the service:
-   ```bash
+   ```shell
    sudo systemctl enable --now reflector.service
    ```
 
 ### Refresh the Database
 
-```bash
+```shell
 sudo pacman -Syy
 ```
 
 ## 2. Using the Arch Linux Mirrorlist Generator
 
-1. Visit the [mirrorlist generator](https://archlinux.org/mirrorlist).
-2. Select your country/region and customize options:
-   - Use HTTPS for secure connections.
-   - Choose mirrors synced within 24 hours.
-3. Generate and copy/download the mirrorlist.
+> [!INFO]
+>
+> 1. Visit the [mirrorlist generator](https://archlinux.org/mirrorlist).
+> 2. Select your country/region and customize options:
+>    - Use HTTPS for secure connections.
+>    - Choose mirrors synced within 24 hours.
+> 3. Generate and copy/download the mirrorlist.
 
 ### Backup and Replace the Mirrorlist
 
 1. Backup your current list:
-   ```bash
+   ```shell
    sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
    ```
 2. Edit the file and paste the list:
-   ```bash
+   ```shell
    sudo nano /etc/pacman.d/mirrorlist
    ```
 3. Uncomment all mirrors manually or using:
-   ```bash
+   ```shell
    sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist
    ```
 
 ### Refresh the Database
 
-```bash
+```shell
 sudo pacman -Syy
 ```
 
@@ -105,24 +111,24 @@ sudo pacman -Syy
 
 ### Install `pacman-contrib`
 
-```bash
+```shell
 sudo pacman -S pacman-contrib
 ```
 
 ### Backup Your Mirrorlist
 
-```bash
+```shell
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 
 ### Uncomment All Mirrors
 
 1. Edit the file:
-   ```bash
+   ```shell
    sudo nano /etc/pacman.d/mirrorlist
    ```
 2. Or uncomment automatically:
-   ```bash
+   ```shell
    sudo sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist
    ```
 
@@ -130,12 +136,12 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 Save the top 10 mirrors:
 
-```bash
+```shell
 rankmirrors -n 10 /etc/pacman.d/mirrorlist | sudo tee /etc/pacman.d/mirrorlist
 ```
 
 ### Refresh the Database
 
-```bash
+```shell
 sudo pacman -Syy
 ```

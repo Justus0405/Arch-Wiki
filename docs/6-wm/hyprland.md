@@ -8,13 +8,14 @@ Setting up `Hyprland` has become straightforward, with various community-driven 
 
 ## Recommended Configurations
 
-### **[Prasanth Rangan's Hyprdots](https://github.com/prasanthrangan/hyprdots)**
+### [Prasanth Rangan's Hyprdots](https://github.com/prasanthrangan/hyprdots)
 
 // Aesthetic, dynamic and minimal dots for Arch hyprland
 
-### **[My Linux for Work's Dotfiles](https://github.com/mylinuxforwork/dotfiles)**
+### [My Linux for Work's Dotfiles](https://github.com/mylinuxforwork/dotfiles)
 
 The ML4W Dotfiles for Hyprland - An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation script for Arch based Linux distributions.
 <br><br>
 
-> [!NOTE] > **These resources help users quickly set up Hyprland with minimal effort, creating a polished and efficient desktop experience.**
+> [!NOTE]
+> These resources help users quickly set up Hyprland with minimal effort, creating a polished and efficient desktop experience.

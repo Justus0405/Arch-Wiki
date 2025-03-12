@@ -8,7 +8,7 @@
 > Laptops use latin1 because the layout is slightly different.
 > For example, `de-latin1`.
 
-```sh
+```shell
 loadkeys de
 ```
 
@@ -17,7 +17,7 @@ loadkeys de
 > [!INFO]
 > To see all connected drives (like hard drives or USB), run:
 
-```sh
+```shell
 lsblk
 ```
 
@@ -28,39 +28,39 @@ lsblk
 
 ### For NVMe drives:
 
-```bash
+```shell
 gdisk /dev/nvme0n1
 ```
 
 ### For SATA or HDD drives:
 
-```bash
+```shell
 gdisk /dev/sda1
 ```
 
-**Steps:**
-
-1. Press `x` for expert mode.
-2. Press `z` to wipe the drive, confirming with `y`.
+> [!INFO]Steps:
+>
+> 1. Press `x` for expert mode.
+> 2. Press `z` to wipe the drive, confirming with `y`.
 
 ## 4. Create Partitions
 
 > [!INFO]
 > Use `cfdisk` for an easy partition editor. Navigate with arrow keys and create partitions.
 
-```bash
+```shell
 cfdisk /dev/nvme0n1
 ```
 
-Create these partitions:
-
-- **Boot Partition:** 1 GiB (EFI)
-- **Swap Partition:** 4 GiB
-- **System Partition:** Remaining space
+> [!INFO] Create these partitions:
+>
+> - Boot Partition → 1 GiB (EFI)
+> - Swap Partition → 4 GiB
+> - System Partition → Remaining space
 
 Example layout:
 
-```
+```ini
 p1 = 1GiB, EFI
 p2 = 4GiB, Linux Swap
 p3 = Remaining, Linux Filesystem
@@ -70,20 +70,20 @@ p3 = Remaining, Linux Filesystem
 
 ### Format Boot Partition (FAT32):
 
-```bash
+```shell
 mkfs.fat -F 32 /dev/nvme0n1p1
 ```
 
 ### Set Up Swap Partition:
 
-```bash
+```shell
 mkswap /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 ```
 
 ### Format System Partition (EXT4):
 
-```bash
+```shell
 mkfs.ext4 /dev/nvme0n1p3
 ```
 
@@ -91,22 +91,23 @@ mkfs.ext4 /dev/nvme0n1p3
 
 ### Mount System Partition:
 
-```bash
+```shell
 mount /dev/nvme0n1p3 /mnt
 ```
 
 ### Mount Boot Partition:
 
-```bash
+```shell
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 ```
 
 ## 7. Install Arch Linux
 
-> [!INFO]
-> Install the essential system packages:
+> [!INFO] Package Info:
+> `linux` is the standard Arch kernel, while `linux-zen` offers desktop performance tweaks for better responsiveness.
+> Install matching headers (`linux-headers` or `linux-zen-headers`) for DKMS support.
 
-```bash
+```shell
 pacman -Syy
 pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
 ```
@@ -116,7 +117,7 @@ pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware sof-
 > [!INFO]
 > Generate the `fstab` file, which tells the system which partitions to mount on boot.
 
-```bash
+```shell
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -125,6 +126,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 > [!INFO]
 > Change the root directory to your new installation for further setup:
 
-```bash
+```shell
 arch-chroot /mnt
 ```

@@ -2,206 +2,206 @@
 
 ## Basic Package Management
 
-- **Search for a package** in the repositories.
+- Search for a package in the repositories.
 
-  ```bash
+  ```shell
   sudo pacman -Ss <package-name>
   ```
 
-- **Install a package** from the repositories.
+- Install a package from the repositories.
 
-  ```bash
+  ```shell
   sudo pacman -S <package-name>
   ```
 
-- **Install a package** from a .pacman file.
+- Install a package from a .pacman file.
 
-  ```bash
+  ```shell
   sudo pacman -U <file-name.pacman>
   ```
 
-- **Check if a package is installed**.
+- Check if a package is installed.
 
-  ```bash
+  ```shell
   pacman -Qs <package-name>
   ```
 
-- **Reinstall an installed package**.
-  ```bash
+- Reinstall an installed package.
+  ```shell
   sudo pacman -S <package-name> --needed --noconfirm
   ```
 
 ## Package Removal
 
-- **Remove a package**, keep dependencies and configuration files.
+- Remove a package, keep dependencies and configuration files.
 
-  ```bash
+  ```shell
   sudo pacman -R <package-name>
   ```
 
-- **Remove a package and its unused dependencies**, keep configuration files.
+- Remove a package and its unused dependencies, keep configuration files.
 
-  ```bash
+  ```shell
   sudo pacman -Rs <package-name>
   ```
 
-- **Remove a package, unused dependencies, and configuration files**.
+- Remove a package, unused dependencies, and configuration files.
 
-  ```bash
+  ```shell
   sudo pacman -Rns <package-name>
   ```
 
-- **Remove a package and all packages that depend on it**, keep unused dependencies.
+- Remove a package and all packages that depend on it, keep unused dependencies.
 
-  ```bash
+  ```shell
   sudo pacman -Rc <package-name>
   ```
 
-- **Forcefully remove a package without checking dependencies** (dangerous).
-  ```bash
+- Forcefully remove a package without checking dependencies (dangerous).
+  ```shell
   sudo pacman -Rdd <package-name>
   ```
 
 ## Advanced (Aggressive) Removal
 
-- **Nuclear Option**: Remove the package, configuration files, unused dependencies, and dependent packages.
+- Nuclear Option: Remove the package, configuration files, unused dependencies, and dependent packages.
 
-  ```bash
+  ```shell
   sudo pacman -Rnsc <package-name>
   ```
 
-- **Tsar Bomb**: Forcefully remove the package, dependencies, and dependent packages. **Ignores dependency checks** (highly dangerous).
-  ```bash
+- Tsar Bomb: Forcefully remove the package, dependencies, and dependent packages. Ignores dependency checks (highly dangerous).
+  ```shell
   sudo pacman -Rnscdd <package-name>
   ```
 
 ## System Maintenance
 
-- **Update the local mirror list**.
+- Update the local mirror list.
 
-  ```bash
+  ```shell
   sudo pacman -Syy
   ```
 
-- **Update the system** (sync package database and install updates).
+- Update the system (sync package database and install updates).
 
-  ```bash
+  ```shell
   sudo pacman -Syu
   ```
 
-- **Force refresh of mirrors and system update**.
+- Force refresh of mirrors and system update.
 
-  ```bash
+  ```shell
   sudo pacman -Syyu
   ```
 
-- **Check for available updates** (without applying them).
+- Check for available updates (without applying them).
 
-  ```bash
+  ```shell
   sudo pacman -Qu
   ```
 
-- **Show orphaned packages** (packages not required by any other package).
+- Show orphaned packages (packages not required by any other package).
 
-  ```bash
+  ```shell
   pacman -Qdt
   ```
 
-- **Remove orphaned packages**.
+- Remove orphaned packages.
 
-  ```bash
+  ```shell
   sudo pacman -Rns $(pacman -Qdtq)
   ```
 
-- **Check package integrity** (to find missing or corrupted files).
-  ```bash
+- Check package integrity (to find missing or corrupted files).
+  ```shell
   pacman -Qkk
   ```
 
 ## Package Information and Logs
 
-- **Show detailed information about an installed package**.
+- Show detailed information about an installed package.
 
-  ```bash
+  ```shell
   pacman -Qi <package-name>
   ```
 
-- **List files installed by a package**.
+- List files installed by a package.
 
-  ```bash
+  ```shell
   pacman -Ql <package-name>
   ```
 
-- **List all installed packages**.
+- List all installed packages.
 
-  ```bash
+  ```shell
   pacman -Q
   ```
 
-- **List explicitly installed packages** (ignores dependencies).
+- List explicitly installed packages (ignores dependencies).
 
-  ```bash
+  ```shell
   pacman -Qe
   ```
 
-- **List manually installed (AUR) packages**.
-  ```bash
+- List manually installed (AUR) packages.
+  ```shell
   pacman -Qm
   ```
 
 ## Cache Management
 
-- **Delete cached packages**, keep the most recent versions.
+- Delete cached packages, keep the most recent versions.
 
-  ```bash
+  ```shell
   sudo pacman -Sc
   ```
 
-- **Delete the entire package cache**.
+- Delete the entire package cache.
 
-  ```bash
+  ```shell
   sudo pacman -Scc
   ```
 
-- **Clear old package versions** while keeping the last 3 versions.
+- Clear old package versions while keeping the last 3 versions.
 
-  ```bash
+  ```shell
   sudo paccache -r
   ```
 
-- **List cached package files**.
-  ```bash
+- List cached package files.
+  ```shell
   sudo ls /var/cache/pacman/pkg/
   ```
 
 ## Keyring and Troubleshooting
 
-- **Reinstall and update Pacman’s keyring**.
+- Reinstall and update Pacman’s keyring.
 
-  ```bash
+  ```shell
   sudo pacman -Sy archlinux-keyring
   ```
 
-- **Remove Pacman database lock** (useful when you encounter a locked database).
+- Remove Pacman database lock (useful when you encounter a locked database).
 
-  ```bash
+  ```shell
   sudo rm /var/lib/pacman/db.lck
   ```
 
-- **Forcibly reinstall all installed packages** (useful for fixing many broken packages).
-  ```bash
+- Forcibly reinstall all installed packages (useful for fixing many broken packages).
+  ```shell
   sudo pacman -S $(pacman -Qq) --needed
   ```
 
 ## Other Useful Commands
 
-- **List files that don't belong to any package**.
+- List files that don't belong to any package.
 
-  ```bash
+  ```shell
   pacman -Qk | grep "no package owns"
   ```
 
-- **Clean Pacman log**, keeping only the last 1000 lines.
-  ```bash
+- Clean Pacman log, keeping only the last 1000 lines.
+  ```shell
   sudo tail -n 1000 /var/log/pacman.log > /var/log/pacman.log
   ```

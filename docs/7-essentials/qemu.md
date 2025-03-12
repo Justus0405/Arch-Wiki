@@ -1,6 +1,7 @@
 # QEMU Guide with Virt-Manager
 
-Simple and easy setup for Qemu with Virt-Manager on Arch Linux
+> [!INFO]
+> Simple and easy setup for Qemu with Virt-Manager on Arch Linux.
 
 ## Installation
 
@@ -12,18 +13,18 @@ Simple and easy setup for Qemu with Virt-Manager on Arch Linux
 
 > [!INFO] Package Info:
 >
-> - qemu-full → Full QEMU package with all features.
-> - virt-manager → GUI for managing virtual machines.
-> - virt-viewer → Lightweight viewer for virtual machines.
-> - libguestfs → Tools for managing virtual disk images.
-> - edk2-ovmf → UEFI firmware for virtual machines.
-> - dmidecode → Reads hardware information for VM configuration.
-> - dnsmasq → DHCP and DNS support for VM networking.
-> - vde2 → Virtual network switch for advanced networking.
-> - bridge-utils → Tools for bridging network interfaces.
-> - openbsd-netcat → Netcat implementation for networking tasks.
-> - ebtables → Controls Ethernet bridge firewall rules.
-> - iptables-nft → Packet filtering framework for networking.
+> - `qemu-full` → Full QEMU package with all features.
+> - `virt-manager` → GUI for managing virtual machines.
+> - `virt-viewer` → Lightweight viewer for virtual machines.
+> - `libguestfs` → Tools for managing virtual disk images.
+> - `edk2-ovmf` → UEFI firmware for virtual machines.
+> - `dmidecode` → Reads hardware information for VM configuration.
+> - `dnsmasq` → DHCP and DNS support for VM networking.
+> - `vde2` → Virtual network switch for advanced networking.
+> - `bridge-utils` → Tools for bridging network interfaces.
+> - `openbsd-netcat` → Netcat implementation for networking tasks.
+> - `ebtables` → Controls Ethernet bridge firewall rules.
+> - `iptables-nft` → Packet filtering framework for networking.
 
 2. Enable and start the libvirt service:
    ```sh

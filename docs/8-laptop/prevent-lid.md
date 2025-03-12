@@ -5,7 +5,7 @@
 
 ## Open a terminal and run:
 
-```bash
+```shell
 sudo tee -a /etc/systemd/logind.conf << EOF
 HandleSuspendKey=ignore
 HandleSuspendKeyLongPress=ignore
@@ -19,6 +19,6 @@ EOF
 
 ## Reload the systemd config:
 
-```bash
+```shell
 sudo systemctl restart systemd-logind
 ```

@@ -49,8 +49,7 @@ export default defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
-          { text: 'Nvidia', link: '/3-gpu-drivers/install-nvidia.md' },
-          { text: 'Nvidia Depricated', link: '/3-gpu-drivers/nvidia-depricated.md' }
+          { text: 'Nvidia', link: '/3-gpu-drivers/install-nvidia.md' }
         ]
       },
       {
@@ -105,6 +104,7 @@ export default defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
+          { text: 'Wifi Hotspot', link: '/9-extra/hotspot.md' },
           { text: 'Benchmarking', link: '/9-extra/benchmarking.md' },
           { text: 'Contributors', link: '/9-extra/contributors.md' }
         ]

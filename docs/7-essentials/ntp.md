@@ -9,13 +9,13 @@
 
 ### Enable and Start `systemd-timesyncd`:
 
-```bash
+```shell
 sudo systemctl enable systemd-timesyncd --now
 ```
 
 ### Check Sync Status:
 
-```bash
+```shell
 timedatectl status
 ```
 
@@ -25,7 +25,7 @@ Look for `System clock synchronized: yes`.
 
 Edit the config to change default NTP servers:
 
-```bash
+```shell
 sudo nano /etc/systemd/timesyncd.conf
 ```
 
@@ -39,6 +39,6 @@ FallbackNTP=2.arch.pool.ntp.org 3.arch.pool.ntp.org
 
 ### Restart `systemd-timesyncd`:
 
-```bash
+```shell
 sudo systemctl restart systemd-timesyncd
 ```

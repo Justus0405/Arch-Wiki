@@ -5,17 +5,19 @@
 
 ## Install Required Packages
 
-- `pipewire`: _the latest and most widely used audio server._
-- `lib32-pipewire`: _32-bit version for compatibility._
-- `pipewire-alsa`: _ALSA support for PipeWire._
-- `pipewire-jack`: _JACK audio server support._
-- `pipewire-pulse`: _PulseAudio support._
-- `gst-plugin-pipewire`: _compatibility for other applications._
-- `wireplumber` and `rtkit`: _ensure system compatibility and priority, addressing audio issues like distortion and crackling._
+```shell
+sudo pacman -S lib32-pipewire pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire wireplumber rtkit
+```
 
-  ```shell
-  sudo pacman -S lib32-pipewire pipewire pipewire-alsa pipewire-jack pipewire-pulse gst-plugin-pipewire wireplumber rtkit
-  ```
+> [!INFO] Package Info:
+>
+> - `pipewire` → the latest and most widely used audio server.
+> - `lib32-pipewire` → 32-bit version for compatibility.
+> - `pipewire-alsa` → ALSA support for PipeWire.
+> - `pipewire-jack` → JACK audio server support.
+> - `pipewire-pulse` → PulseAudio support.
+> - `gst-plugin-pipewire` → compatibility for other applications.
+> - `wireplumber` and `rtkit` → ensure system compatibility and priority, addressing audio issues like distortion and crackling.
 
 ## Add User to the rtkit Group
 

@@ -1,20 +1,20 @@
 # Inside the Environment
 
-## Enable NetworkManager
+## 10. Enable NetworkManager
 
 > [!INFO]
 > Automatically start NetworkManager to manage network connections at boot.
 
-```bash
+```shell
 systemctl enable NetworkManager
 ```
 
-## Configure `pacman.conf`
+## 11. Configure `pacman.conf`
 
 > [!INFO]
 > Edit `pacman.conf` to optimize package management.
 
-```bash
+```shell
 nano /etc/pacman.conf
 ```
 
@@ -23,7 +23,7 @@ nano /etc/pacman.conf
 
 Add these lines:
 
-```bash
+```ini
 [options]
 ILoveCandy
 ParallelDownloads = 5
@@ -32,43 +32,45 @@ ParallelDownloads = 5
 Include = /etc/pacman.d/mirrorlist
 ```
 
-- `ILoveCandy`: Adds visual effects to downloads.
-- `ParallelDownloads`: Enables faster downloads.
-- `multilib`: Adds 32-bit support (for apps like Steam).
+> [!INFO]
+>
+> - `ILoveCandy` → Adds visual effects to downloads.
+> - `ParallelDownloads` → Enables faster downloads.
+> - `multilib` → Adds 32-bit support (for apps like Steam).
 
-## Update Pacman Repositories
+## 12. Update Pacman Repositories
 
 > [!INFO]
 > Refresh the package database to get the latest software versions.
 
-```bash
+```shell
 pacman -Syy
 ```
 
-## Set the System Timezone
+## 13. Set the System Timezone
 
 > [!INFO]
 > Set your timezone (replace `Europe/Berlin` with yours):
 
-```bash
+```shell
 ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 ```
 
 > [!INFO]
 > Sync the system clock with the BIOS clock:
 
-```bash
+```shell
 hwclock --systohc
 ```
 
-## Set Locale
+## 14. Set Locale
 
 > [!INFO]
 > Set the system's language and encoding.
 
 1. Edit `locale.gen` to uncomment your locale:
 
-   ```bash
+   ```shell
    nano /etc/locale.gen
    ```
 
@@ -77,59 +79,59 @@ hwclock --systohc
 
 2. Generate the locale:
 
-   ```bash
+   ```shell
    locale-gen
    ```
 
 3. Set the default system language (replace `de_DE.UTF-8` with yours):
-   ```bash
+   ```shell
    echo "LANG=de_DE.UTF-8" > /etc/locale.conf
    ```
 
-## Set the Hostname
+## 15. Set the Hostname
 
 > [!INFO]
 > Set your system's hostname which is displayed in your network:
 
-```bash
+```shell
 echo "arch" > /etc/hostname
 ```
 
-## Configure Keyboard Layout for Console
+## 16. Configure Keyboard Layout for Console
 
 > [!INFO]
 > Set the console keyboard layout (replace `de` with yours).
 > Laptops use latin1 because the layout is slightly different.
 > For example, `de-latin1`.
 
-```bash
+```shell
 echo "KEYMAP=de" > /etc/vconsole.conf
 ```
 
-## Create a New User
+## 17. Create a New User
 
-```bash
+```shell
 useradd -m -G wheel,power,storage,video,audio -s /bin/bash justus
 ```
 
-## Set the user’s password:
+## 18. Set the user’s password:
 
-```bash
+```shell
 passwd justus
 ```
 
-## Grant Sudo Access (Admin Privilages)
+## 19. Grant Sudo Access (Admin Privilages)
 
 > [!INFO]
 > This gives `sudo` access to users in the `wheel` group.
 
 1. Open the `sudoers` file:
 
-   ```bash
+   ```shell
    EDITOR=nano visudo
    ```
 
 2. Uncomment this line (remove the `#`):
-   ```bash
+   ```shell
    %wheel ALL=(ALL:ALL) ALL
    ```

@@ -1,22 +1,19 @@
 # Benchmarking on Arch Linux
 
-Learn how to benchmark your CPU, GPU, RAM, Disk, and Network performance on Arch Linux using popular tools.
+> [!INFO]
+> Learn how to benchmark your CPU, GPU, RAM, Disk, and Network performance on Arch Linux using popular tools.
 
 ## CPU Benchmark
 
 ### Install `sysbench`
 
-Run this command to install:
-
-```bash
+```shell
 sudo pacman -S sysbench
 ```
 
 ### Run CPU Test
 
-Run this command:
-
-```bash
+```shell
 sysbench cpu --threads=$(nproc) run
 ```
 
@@ -30,17 +27,13 @@ sysbench cpu --threads=$(nproc) run
 
 ### Install `glmark2`
 
-Run this command to install:
-
-```bash
+```shell
 sudo pacman -S glmark2
 ```
 
 ### Run GPU Test
 
-Run this command:
-
-```bash
+```shell
 glmark2
 ```
 
@@ -51,17 +44,13 @@ glmark2
 
 ### Install `sysbench` (if not installed already)
 
-Run this command to install:
-
-```bash
+```shell
 sudo pacman -S sysbench
 ```
 
 ### Run Memory Test
 
-Run this command:
-
-```bash
+```shell
 sysbench memory --threads=$(nproc) run
 ```
 
@@ -72,17 +61,13 @@ sysbench memory --threads=$(nproc) run
 
 ### Install `fio`
 
-Run this command to install:
-
-```bash
+```shell
 sudo pacman -S fio
 ```
 
 ### Test Disk Read/Write Speed
 
-Run this command:
-
-```bash
+```shell
 fio --name=seqreadwrite --rw=readwrite --bs=1m --size=1G --numjobs=1 --time_based --runtime=60 --group_reporting
 ```
 
@@ -97,24 +82,20 @@ fio --name=seqreadwrite --rw=readwrite --bs=1m --size=1G --numjobs=1 --time_base
 
 ### Install `iperf3`
 
-Run this command to install:
-
-```bash
+```shell
 sudo pacman -S iperf3
 ```
 
 ### Run Network Speed Test
 
-1. **Start server** on one machine:
-   ```bash
+1. Start server on one machine:
+   ```shell
    iperf3 -s
    ```
-2. **Run test** from another machine:
-   ```bash
+2. Run test from another machine:
+   ```shell
    iperf3 -c <server-ip>
    ```
-
----
 
 > [!TIP]
 > Always close unused applications for accurate results.

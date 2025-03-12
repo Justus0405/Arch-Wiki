@@ -8,7 +8,7 @@
 
 Make sure your system is up to date before starting:
 
-```bash
+```shell
 sudo pacman -Syyu
 ```
 
@@ -16,16 +16,18 @@ sudo pacman -Syyu
 
 Here’s what you need to install:
 
-- **`gnome`**: The GNOME desktop environment.
-- **`gnome-tweaks`**: For customizing themes, fonts, and more.
-- **`gdm`**: The login manager where you log in and select GNOME.
-- **`gst-libav`**: Multimedia codecs for video previews in the file manager.
-- **`pipewire-jack`**: Support for legacy JACK audio with PipeWire.
-- **`noto-fonts-emoji`**: Google’s Emoji Font for proper emoji display.
-
-```bash
+```shell
 sudo pacman -S gnome gnome-tweaks gdm gst-libav pipewire-jack noto-fonts-emoji
 ```
+
+> [!INFO] Package Info:
+>
+> - `gnome` → The GNOME desktop environment.
+> - `gnome-tweaks` → For customizing themes, fonts, and more.
+> - `gdm` → The login manager where you log in and select GNOME.
+> - `gst-libav` → Multimedia codecs for video previews in the file manager.
+> - `pipewire-jack` → Support for legacy JACK audio with PipeWire.
+> - `noto-fonts-emoji` → Google’s Emoji Font for proper emoji display.
 
 ## Set Your Keyboard Layout
 
@@ -37,7 +39,7 @@ sudo pacman -S gnome gnome-tweaks gdm gst-libav pipewire-jack noto-fonts-emoji
 > Laptops use latin1 because the layout is slightly different.
 > For example, `de-latin1`.
 
-```bash
+```shell
 sudo localectl set-keymap de
 ```
 
@@ -45,7 +47,7 @@ sudo localectl set-keymap de
 
 Set GDM (GNOME Display Manager) to start automatically on boot:
 
-```bash
+```shell
 sudo systemctl enable gdm
 ```
 
@@ -54,6 +56,6 @@ sudo systemctl enable gdm
 > [!INFO]
 > You’re all set! Reboot your system to log into your new GNOME desktop environment:
 
-```bash
+```shell
 sudo reboot
 ```

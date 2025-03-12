@@ -5,15 +5,15 @@
 
 ## 1. Display Governor
 
-- **Display Current Governor**:
+- Display Current Governor:
 
-  ```bash
+  ```shell
   cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
   ```
 
-- **Display Available Governors**:
+- Display Available Governors:
 
-  ```bash
+  ```shell
   cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors
   ```
 
@@ -22,38 +22,38 @@
 > [!TIP]
 > Balance performance and battery use by adjusting the CPU governor.
 
-- **Install `cpupower`**:
+- Install `cpupower`:
 
-  ```bash
+  ```shell
   sudo pacman -S cpupower
   ```
 
-- **Set CPU governor**:
+### Set CPU governor:
 
-  - For battery efficiency:
+- For battery efficiency:
 
-    ```bash
-    sudo cpupower frequency-set -g schedutil
-    ```
-
-  - For performance:
-
-    ```bash
-    sudo cpupower frequency-set -g performance
-    ```
-
-- **Make the governor setting persistent**:
-
-  Edit the `cpupower` configuration:
-
-  ```bash
-  sudo nano /etc/default/cpupower
+  ```shell
+  sudo cpupower frequency-set -g schedutil
   ```
 
-  Add `GOVERNOR="schedutil"` or `GOVERNOR="performance"`.
+- For performance:
 
-- **Enable and start the service**:
+  ```shell
+  sudo cpupower frequency-set -g performance
+  ```
 
-  ```bash
+### Make the governor setting persistent:
+
+Edit the `cpupower` configuration:
+
+```shell
+sudo nano /etc/default/cpupower
+```
+
+Add `GOVERNOR="schedutil"` or `GOVERNOR="performance"`.
+
+- Enable and start the service:
+
+  ```shell
   sudo systemctl enable cpupower --now
   ```

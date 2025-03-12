@@ -6,9 +6,9 @@
 
 ## Install NVIDIA Packages
 
-**Open a terminal and run the following command to install the necessary NVIDIA packages:**
+Open a terminal and run the following command to install the necessary NVIDIA packages:
 
-```bash
+```shell
 sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia nvidia-settings lib32-nvidia-utils lib32-opencl-nvidia egl-wayland
 ```
 
@@ -16,51 +16,51 @@ sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia nvidia-settings l
 
 - Open the `mkinitcpio.conf` file:
 
-  ```bash
+  ```shell
   sudo nano /etc/mkinitcpio.conf
   ```
 
 - Find the `MODULES` line and add the following modules:
 
-  ```plaintext
+  ```ini
   MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
   ```
 
 - Remove `kms` from the `HOOKS` line to avoid conflicts. It might look something like this:
 
-  ```plaintext
+  ```ini
   HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
   ```
 
-**Save and exit the file (Ctrl + X, then Y, then Enter).**
+Save and exit the file (Ctrl + X, then Y, then Enter).
 
 ## Create NVIDIA Configuration File
 
-**_Create the `/etc/modprobe.d/nvidia.conf` file:_**
+Create the `/etc/modprobe.d/nvidia.conf` file:
 
-```bash
+```shell
 sudo nano /etc/modprobe.d/nvidia.conf
 ```
 
-**_Add the following line to the file:_**
+Add the following line to the file:
 
-```plaintext
+```ini
 options nvidia_drm modeset=1 fbdev=1
 ```
 
-**Save and exit the file (Ctrl + X, then Y, then Enter).**
+Save and exit the file (Ctrl + X, then Y, then Enter).
 
 ## Update GRUB Configuration
 
 - Open the GRUB configuration file:
 
-  ```bash
+  ```shell
   sudo nano /etc/default/grub
   ```
 
 - Find the line starting with `GRUB_CMDLINE_LINUX_DEFAULT` and update it to include the following options:
 
-  ```plaintext
+  ```ini
   GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet nvidia_drm.modeset=1"
   ```
 
@@ -68,24 +68,24 @@ options nvidia_drm modeset=1 fbdev=1
 
 ## Regenerate initramfs
 
-**_Run the following command to regenerate the initramfs with your changes:_**
+Run the following command to regenerate the initramfs with your changes:
 
-```bash
+```shell
 sudo mkinitcpio -P
 ```
 
 ## Update GRUB
 
-**_Run the following command to update the GRUB configuration:_**
+Run the following command to update the GRUB configuration:
 
-```bash
+```shell
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Reboot
 
-**_Finally, reboot your system to apply the changes:_**
+Finally, reboot your system to apply the changes:
 
-```bash
+```shell
 sudo reboot
 ```

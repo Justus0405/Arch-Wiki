@@ -13,39 +13,39 @@
 > [!INFO]
 > auto-cpufreq adjusts CPU frequency and power based on system load.
 
-- **Install `auto-cpufreq`**:
+- Install `auto-cpufreq`:
 
-  ```bash
+  ```shell
   yay -S auto-cpufreq
   ```
 
-- **Test in live mode**:
+- Test in live mode:
 
-  ```bash
+  ```shell
   sudo auto-cpufreq --live
   ```
 
-- **Enable automatic startup**:
+- Enable automatic startup:
 
-  ```bash
+  ```shell
   sudo auto-cpufreq --install
   ```
 
-- **Monitor system behavior**:
+- Monitor system behavior:
 
-  ```bash
+  ```shell
   sudo auto-cpufreq --monitor
   ```
 
-- **View CPU stats**:
+- View CPU stats:
 
-  ```bash
+  ```shell
   sudo auto-cpufreq --stats
   ```
 
-- **Uninstall**:
+- Uninstall:
 
-  ```bash
+  ```shell
   sudo auto-cpufreq --remove
   ```
 
@@ -54,27 +54,27 @@
 > [!INFO]
 > TLP optimizes battery life automatically.
 
-- **Install TLP**:
+- Install TLP:
 
-  ```bash
+  ```shell
   sudo pacman -S tlp tlp-rdw
   ```
 
-- **Start and enable TLP**:
+- Start and enable TLP:
 
-  ```bash
+  ```shell
   sudo systemctl enable tlp --now
   ```
 
-- **Check TLP status**:
+- Check TLP status:
 
-  ```bash
+  ```shell
   sudo tlp-stat
   ```
 
-- **Optional: Install GUI for TLP**:
+- Optional: Install GUI for TLP:
 
-  ```bash
+  ```shell
   yay -S tlpui
   ```
 
@@ -83,29 +83,29 @@
 > [!INFO]
 > Reduce swap usage for better performance.
 
-- **Check current swappiness**:
+- Check current swappiness:
 
-  ```bash
+  ```shell
   cat /proc/sys/vm/swappiness
   ```
 
-- **Set swappiness to 10**:
+- Set swappiness to 10:
 
   Edit `/etc/sysctl.conf`:
 
-  ```bash
+  ```shell
   sudo nano /etc/sysctl.conf
   ```
 
   Add:
 
-  ```bash
+  ```shell
   vm.swappiness=10
   ```
 
-- **Apply changes**:
+- Apply changes:
 
-  ```bash
+  ```shell
   sudo sysctl -p
   ```
 
@@ -114,21 +114,21 @@
 > [!INFO]
 > Disable file access time writes for better performance, especially on SSDs.
 
-- **Edit `/etc/fstab`**:
+- Edit `/etc/fstab`:
 
-  ```bash
+  ```shell
   sudo nano /etc/fstab
   ```
 
   Add `noatime` to the root partition:
 
-  ```bash
+  ```ini
   UUID=<your-disk-UUID> / ext4 defaults,noatime 0 1
   ```
 
   Reboot to apply changes:
 
-  ```bash
+  ```shell
   sudo reboot
   ```
 
@@ -136,34 +136,34 @@
 
 ### 4.1. `powertop` (Power Consumption Monitor)
 
-- **Install `powertop`**:
+- Install `powertop`:
 
-  ```bash
+  ```shell
   sudo pacman -S powertop
   ```
 
-- **Run `powertop` in interactive mode**:
+- Run `powertop` in interactive mode:
 
-  ```bash
+  ```shell
   sudo powertop
   ```
 
-- **Optimize settings**:
+- Optimize settings:
 
-  ```bash
+  ```shell
   sudo powertop --auto-tune
   ```
 
 ### 4.2. `btop` or `htop` (Resource Monitoring)
 
-- **Install `btop`**:
+- Install `btop`:
 
-  ```bash
+  ```shell
   sudo pacman -S btop
   ```
 
-- **Install `htop`**:
+- Install `htop`:
 
-  ```bash
+  ```shell
   sudo pacman -S htop
   ```

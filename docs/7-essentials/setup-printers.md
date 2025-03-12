@@ -12,25 +12,25 @@
 
 ## Install CUPS and a GUI Printer Manager
 
-```bash
+```shell
 sudo pacman -S cups system-config-printer
 ```
 
 ## Enable the CUPS service
 
-```bash
+```shell
 sudo systemctl enable --now cups
 ```
 
 ## Add yourself to the printing management group
 
-```bash
+```shell
 sudo usermod -aG lp $USER
 ```
 
 ## Install your printer specific drivers (Example: HP)
 
-```bash
+```shell
 sudo pacman -S hplip
 ```
 
@@ -44,13 +44,13 @@ sudo pacman -S hplip
 
 ## For HP printers
 
-```bash
+```shell
 hp-setup -i
 ```
 
 ## For any other, open the printer settings and add your printer
 
-```bash
+```shell
 system-config-printer
 ```
 
@@ -64,12 +64,12 @@ system-config-printer
 
 ## View print jobs from terminal
 
-```bash
+```shell
 lpq
 ```
 
 ## Cancel all print jobs from terminal
 
-```bash
+```shell
 lprm -
 ```
