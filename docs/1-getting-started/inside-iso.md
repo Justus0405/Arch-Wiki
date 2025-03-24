@@ -107,6 +107,10 @@ mount --mkdir /dev/nvme0n1p1 /mnt/boot
 > `linux` is the standard Arch kernel, while `linux-zen` offers desktop performance tweaks for better responsiveness.
 > Install matching headers (`linux-headers` or `linux-zen-headers`) for DKMS support.
 
+> [!IMPORTANT]
+> You will need to install `intel-ucode` for intel CPUs
+> and `amd-ucode` for AMD CPUs for their microcode. These are important for stability, security and performance!
+
 ```shell
 pacman -Syy
 pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
