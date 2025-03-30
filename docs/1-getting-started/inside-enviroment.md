@@ -1,12 +1,12 @@
 # Inside the Environment
 
-## 10. Enable NetworkManager
+## 10. Enable Services
 
 > [!INFO]
-> Automatically start NetworkManager to manage network connections at boot.
+> Automatically start NetworkManager and NTP at boot to manage network connections and sync time.
 
 ```shell
-systemctl enable NetworkManager
+systemctl enable NetworkManager systemd-timesyncd
 ```
 
 ## 11. Configure `pacman.conf`

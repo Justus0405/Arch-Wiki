@@ -29,13 +29,13 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 Run this command (replace `'Germany'` with your country):
 
 ```shell
-sudo reflector --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+sudo reflector --country 'Germany' --latest 5 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 > [!INFO] Config Info:
 >
 > - `--country` → Mirrors in your location.
-> - `--age 12` → Use mirrors synced within 12 hours.
+> - `--latest 5` → Use latest 5 synced mirrors.
 > - `--protocol https` → Use HTTPS mirrors.
 > - `--sort rate` → Rank mirrors by speed.
 
@@ -57,7 +57,7 @@ cat /etc/pacman.d/mirrorlist
 
    ```
    --country 'United States'
-   --age 12
+   --latest 5
    --protocol https
    --sort rate
    --save /etc/pacman.d/mirrorlist
@@ -79,9 +79,7 @@ sudo pacman -Syy
 > [!INFO]
 >
 > 1. Visit the [mirrorlist generator](https://archlinux.org/mirrorlist).
-> 2. Select your country/region and customize options:
->    - Use HTTPS for secure connections.
->    - Choose mirrors synced within 24 hours.
+> 2. Select your country/region and customize options.
 > 3. Generate and copy/download the mirrorlist.
 
 ### Backup and Replace the Mirrorlist

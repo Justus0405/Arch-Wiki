@@ -69,13 +69,14 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Tiling Window Managers',
+        text: 'Wireless Guides',
         collapsible: true,
-        collapsed: true,
+        collapsed: false,
         items: [
-          { text: 'Hyprland', link: '/6-wm/hyprland.md' },
-          { text: 'i3wm', link: '/6-wm/i3.md' },
-          { text: 'Dwm', link: '/6-wm/dwm.md' }
+          { text: 'iwd Guide', link: '/6-wireless/iwd.md' },
+          { text: 'nmcli Guide', link: '/6-wireless/nmcli.md' },
+          { text: 'Bluetooth Guide', link: '/6-wireless/bluetooth.md' },
+          { text: 'Wifi Hotspot', link: '/6-wireless/hotspot.md' }
         ]
       },
       {
@@ -86,7 +87,8 @@ export default defineConfig({
           { text: 'Fonts', link: '/7-essentials/install-fonts.md' },
           { text: 'NTP Setup', link: '/7-essentials/ntp.md' },
           { text: 'Qemu', link: '/7-essentials/qemu.md' },
-          { text: 'Printers Setup', link: '/7-essentials/setup-printers.md' }
+          { text: 'Printers Setup', link: '/7-essentials/setup-printers.md' },
+          { text: 'Storage Maintenance', link: '/7-essentials/storage-maintenance.md' }
         ]
       },
       {
@@ -104,8 +106,8 @@ export default defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
-          { text: 'Wifi Hotspot', link: '/9-extra/hotspot.md' },
           { text: 'Benchmarking', link: '/9-extra/benchmarking.md' },
+          { text: 'Docker', link: '/9-extra/docker.md' },
           { text: 'Contributors', link: '/9-extra/contributors.md' }
         ]
       }

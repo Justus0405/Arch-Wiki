@@ -21,6 +21,13 @@ loadkeys de
 lsblk
 ```
 
+> [!TIP]
+> Or for a more detailed view, run:
+
+```shell
+lsblk -S
+```
+
 ## 3. Wipe the Target Drive
 
 > [!WARNING]
@@ -84,7 +91,7 @@ swapon /dev/nvme0n1p2
 ### Format System Partition (EXT4):
 
 ```shell
-mkfs.ext4 /dev/nvme0n1p3
+mkfs.ext4 -F /dev/nvme0n1p3
 ```
 
 ## 6. Mount Your Partitions

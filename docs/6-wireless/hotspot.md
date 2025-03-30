@@ -44,7 +44,7 @@
 6. Alternatively using the UUID:
 
    ```shell
-   sudo nmcli connection delete uuid <UUID>
+   sudo nmcli connection delete uuid "UUID"
    ```
 
 ## Viewing Hotspot Information
