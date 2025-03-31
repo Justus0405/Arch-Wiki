@@ -67,7 +67,8 @@
 > [!INFO]
 > TRIM improves SSD longevity and speed by clearing unused data blocks.
 
-> [!IMPORTANT] > `hdparm` works for SATA drives but doesn't work well with NVMe drives.
+> [!IMPORTANT]
+> `hdparm` works for SATA drives but doesn't work well with NVMe drives.
 
 1. Check if your drive supports TRIM:
    ```sh

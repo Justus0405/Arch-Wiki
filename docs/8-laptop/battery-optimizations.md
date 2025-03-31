@@ -109,10 +109,12 @@
   sudo sysctl -p
   ```
 
-## 3. File System Performance (noatime)
+## 3. File System Performance
+
+### 3.1. (SSD) Configuring noatime
 
 > [!INFO]
-> Disable file access time writes for better performance, especially on SSDs.
+> Disabling file access time (`noatime`) prevents unnecessary disk writes, improving performance and longevity, especially on SSDs.
 
 - Edit `/etc/fstab`:
 
@@ -120,16 +122,37 @@
   sudo nano /etc/fstab
   ```
 
-  Add `noatime` to the root partition:
+- Add `noatime` to the root partition:
 
   ```ini
   UUID=<your-disk-UUID> / ext4 defaults,noatime 0 1
   ```
 
-  Reboot to apply changes:
+- Reboot to apply changes:
 
   ```shell
   sudo reboot
+  ```
+
+### 3.2. (HDD) Configuring HDD Spin Times
+
+> [!INFO]
+> Make your HDD spin down after a given amount of time, this will improve longevity and save power. The value is in multiples of 5 seconds.
+> Example: To set it to 10 minutes (600 seconds)
+
+> [!WARNING]
+> Setting this too low may cause frequent spin-ups, which can reduce drive lifespan.
+
+- Set the Spindown Timeout:
+
+  ```shell
+  sudo hdparm -S 120 /dev/sdX
+  ```
+
+- To disable spindown:
+
+  ```shell
+  sudo hdparm -S 0 /dev/sdX
   ```
 
 ## 4. System Monitoring Tools
