@@ -17,33 +17,34 @@ loadkeys de
 > [!INFO]
 > To see all connected drives (like hard drives or USB), run:
 
-```shell
+:::code-group
+
+```shell [Normal]
 lsblk
 ```
 
-> [!TIP]
-> Or for a more detailed view, run:
-
-```shell
+```shell [Detailed]
 lsblk -S
 ```
+
+:::
 
 ## 3. Wipe the Target Drive
 
 > [!WARNING]
 > This erases all data on the drive. Back up anything important first.
 
-### For NVMe drives:
+::: code-group
 
-```shell
+```shell [NVME]
 gdisk /dev/nvme0n1
 ```
 
-### For SATA or HDD drives:
-
-```shell
-gdisk /dev/sda1
+```shell [SATA]
+gdisk /dev/sda
 ```
+
+:::
 
 > [!INFO]Steps:
 >
@@ -55,58 +56,99 @@ gdisk /dev/sda1
 > [!INFO]
 > Use `cfdisk` for an easy partition editor. Navigate with arrow keys and create partitions.
 
-```shell
+::: code-group
+
+```shell [NVME]
 cfdisk /dev/nvme0n1
 ```
 
-> [!INFO] Create these partitions:
+```shell [SATA]
+cfdisk /dev/sda
+```
+
+:::
+
+> [!TIP] Create these partitions:
 >
 > - Boot Partition → 1 GiB (EFI)
 > - Swap Partition → 4 GiB
 > - System Partition → Remaining space
 
-Example layout:
-
-```ini
-p1 = 1GiB, EFI
-p2 = 4GiB, Linux Swap
-p3 = Remaining, Linux Filesystem
-```
-
 ## 5. Format the Partitions
 
 ### Format Boot Partition (FAT32):
 
-```shell
+::: code-group
+
+```shell [NVME]
 mkfs.fat -F 32 /dev/nvme0n1p1
 ```
 
+```shell [SATA]
+mkfs.fat -F 32 /dev/sda1
+```
+
+:::
+
 ### Set Up Swap Partition:
 
-```shell
+::: code-group
+
+```shell [NVME]
 mkswap /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 ```
 
+```shell [SATA]
+mkswap /dev/sda2
+swapon /dev/sda2
+```
+
+:::
+
 ### Format System Partition (EXT4):
 
-```shell
+::: code-group
+
+```shell [NVME]
 mkfs.ext4 -F /dev/nvme0n1p3
 ```
+
+```shell [SATA]
+mkfs.ext4 -F /dev/sda3
+```
+
+:::
 
 ## 6. Mount Your Partitions
 
 ### Mount System Partition:
 
-```shell
+::: code-group
+
+```shell [NVME]
 mount /dev/nvme0n1p3 /mnt
 ```
 
+```shell [SATA]
+mount /dev/sda3 /mnt
+```
+
+:::
+
 ### Mount Boot Partition:
 
-```shell
+::: code-group
+
+```shell [NVME]
 mount --mkdir /dev/nvme0n1p1 /mnt/boot
 ```
+
+```shell [SATA]
+mount --mkdir /dev/sda1 /mnt/boot
+```
+
+:::
 
 ## 7. Install Arch Linux
 
