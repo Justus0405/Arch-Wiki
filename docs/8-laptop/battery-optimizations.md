@@ -114,7 +114,7 @@
 ### 3.1. (SSD) Configuring noatime
 
 > [!INFO]
-> Disabling file access time (`noatime`) prevents unnecessary disk writes, improving performance and longevity, especially on SSDs.
+> Disabling file access time `noatime` prevents unnecessary disk writes, improving performance and longevity, especially on SSDs.
 
 - Edit `/etc/fstab`:
 
@@ -143,7 +143,7 @@
 > [!WARNING]
 > Setting this too low may cause frequent spin-ups, which can reduce drive lifespan.
 
-- Set the Spindown Timeout:
+- Set the spindown timeout:
 
   ```shell
   sudo hdparm -S 120 /dev/sdX
