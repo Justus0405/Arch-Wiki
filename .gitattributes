@@ -1,0 +1,4 @@
+*.ts linguist-detectable
+*.tsx linguist-detectable
+*.mts linguist-detectable
+*.cts linguist-detectable
