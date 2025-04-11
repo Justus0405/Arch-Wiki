@@ -3,6 +3,14 @@
 > [!INFO]
 > Simple and easy guide to set up a Wi-Fi hotspot using `nmcli` on Linux.
 
+## Installation
+
+1. Install this package:
+
+   ```shell
+   sudo pacman -S dnsmasq
+   ```
+
 ## Quick Setup
 
 1. Check your Wi-Fi interface name:
@@ -49,13 +57,19 @@
 
 ## Viewing Hotspot Information
 
-To see which connections your device has and how the hotspot id is, use:
+To view the password, use:
+
+```shell
+nmcli device wifi show-password
+```
+
+To view which connections your device has and how the hotspot id is, use:
 
 ```shell
 sudo nmcli connection show
 ```
 
-To see information about your active hotspot and its settings, use:
+To view information about your active hotspot and its settings, use:
 
 > [!INFO]
 > This will display details like the SSID, IP settings, WPA, and other parameters for your hotspot.
