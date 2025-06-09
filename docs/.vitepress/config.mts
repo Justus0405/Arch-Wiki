@@ -107,6 +107,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Benchmarking', link: '/9-extra/benchmarking.md' },
+          { text: 'Chaotic AUR', link: '/9-extra/chaotic-aur.md' },
           { text: 'Docker', link: '/9-extra/docker.md' },
           { text: 'Contributors', link: '/9-extra/contributors.md' }
         ]

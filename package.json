@@ -1,6 +1,6 @@
 {
     "devDependencies": {
-        "@catppuccin/vitepress": "^0.1.0",
+        "@catppuccin/vitepress": "^0.1.2",
         "vitepress": "^1.6.3"
     },
     "scripts": {
