@@ -8,7 +8,7 @@
 1. Install Docker and Docker Compose packages:
 
    ```sh
-   sudo pacman -S docker docker-compose
+   sudo pacman -S docker docker-compose docker-buildx
    ```
 
 > [!INFO] Package Info:
