@@ -8,6 +8,14 @@
 ```shell
 systemctl enable NetworkManager systemd-timesyncd
 ```
+> [!INFO]
+> Run TRIM once a week on all supported drives.
+> TRIM tells an SSD or NVMe which blocks are no longer in use so it can clean them up in advance, improving performance and extending the drive’s lifespan.
+> Enabling this won't affect HDD's.
+
+```shell
+sudo systemctl enable fstrim.timer
+```
 
 ## 11. Configure `pacman.conf`
 
