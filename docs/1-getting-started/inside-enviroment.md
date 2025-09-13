@@ -8,6 +8,7 @@
 ```shell
 systemctl enable NetworkManager systemd-timesyncd
 ```
+
 > [!INFO]
 > Run TRIM once a week on all supported drives.
 > TRIM tells an SSD or NVMe which blocks are no longer in use so it can clean them up in advance, improving performance and extending the drive’s lifespan.
@@ -20,7 +21,7 @@ sudo systemctl enable fstrim.timer
 ## 11. Configure `pacman.conf`
 
 > [!INFO]
-> Edit `pacman.conf` to optimize package management.
+> Edit `pacman.conf` to optimize package downloads and add 32-bit support.
 
 ```shell
 nano /etc/pacman.conf
@@ -29,19 +30,36 @@ nano /etc/pacman.conf
 > [!TIP]
 > Navigate `nano` with arrow keys. Save with `CTRL + O` and exit with `CTRL + X`. To exit without saving, press `CTRL + X` and `n`.
 
-Add these lines:
+### Edit the [options] section:
+
+Find the section called [options] and add the follwing lines below:
 
 ```ini
 [options]
 ILoveCandy
 ParallelDownloads = 5
+```
 
+### Enable 32-bit application support:
+
+Scroll to the bottom of the file until you see these lines:
+
+```ini
+#[multilib]
+#Include = /etc/pacman.d/mirrorlist
+```
+
+Uncomment them, so it looks like this:
+
+```ini
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
 
+This activates the multilib repository, which is required if you want to run 32-bit programs on a 64-bit system (for example, Steam and some older apps).
+
 > [!INFO]
->
+> In Summary:
 > - `ILoveCandy` → Adds visual effects to downloads.
 > - `ParallelDownloads` → Enables faster downloads.
 > - `multilib` → Adds 32-bit support (for apps like Steam).
