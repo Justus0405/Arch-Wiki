@@ -160,10 +160,25 @@ mount --mkdir /dev/sda1 /mnt/boot
 > You will need to install `intel-ucode` for intel CPUs
 > and `amd-ucode` for AMD CPUs for their microcode. These are important for stability, security and performance!
 
-```shell
-pacman -Syy
+::: code-group
+
+```shell [linux]
+pacstrap -K /mnt base base-devel linux linux-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
+```
+
+```shell [linux-zen]
 pacstrap -K /mnt base base-devel linux-zen linux-zen-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
 ```
+
+```shell [linux-lts]
+pacstrap -K /mnt base base-devel linux-lts linux-lts-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
+```
+
+```shell [linux-hardened]
+pacstrap -K /mnt base base-devel linux-hardened linux-hardened-headers linux-firmware sof-firmware nano networkmanager grub efibootmgr intel-ucode bash-completion
+```
+
+:::
 
 ## 8. Generate the fstab File
 
