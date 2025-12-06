@@ -11,7 +11,7 @@
 1. Clone the repository:
 
 ```shell
-git --depth 1 https://github.com/Justus0405/Arch-Wiki.git
+git clone --depth 1 https://github.com/Justus0405/Arch-Wiki.git
 ```
 
 2. Navigate to the directory:
