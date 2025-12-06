@@ -1,0 +1,9 @@
+services:
+  arch-wiki:
+    container_name: "arch-wiki"
+    restart: "unless-stopped"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
