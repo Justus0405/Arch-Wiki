@@ -116,7 +116,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: "github", link: "https://github.com/Justus0405" },
-      { icon: "discord", link: "https://discord.com/invite/E2Bp7GtcaA" }
+      { icon: "discord", link: "https://discord.justus0405.com" }
     ],
 
     search: {
