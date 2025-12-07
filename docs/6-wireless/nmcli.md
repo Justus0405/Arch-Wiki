@@ -7,13 +7,13 @@
 
 1. List available Wi-Fi networks:
 
-   ```sh
+   ```shell
    nmcli device wifi list
    ```
 
 2. Connect to a Wi-Fi network:
 
-   ```sh
+   ```shell
    nmcli device wifi connect "SSID" --ask
    ```
 
@@ -23,7 +23,7 @@
 
 3. Check your connection:
 
-   ```sh
+   ```shell
    nmcli connection show
    ```
 
@@ -34,48 +34,47 @@
 
 - Disconnect from a Wi-Fi network:
 
-  ```sh
+  ```shell
   nmcli connection down id "SSID"
   ```
 
 - Reconnect to a Wi-Fi network:
 
-  ```sh
+  ```shell
   nmcli connection up id "SSID"
   ```
 
 - List all saved connections:
 
-  ```sh
+  ```shell
   nmcli connection show
   ```
 
 - List all available devices:
 
-  ```sh
+  ```shell
   nmcli device status
   ```
 
 - Show information about your current Wi-Fi connection:
 
-  ```sh
+  ```shell
   nmcli device show wlan0
   ```
 
   > [!INFO]
   > Replace `wlan0` with the name of your wireless interface if it's different.
 
-
 ## Troubleshooting
 
 1. Check if Wi-Fi is enabled:
 
-   ```sh
+   ```shell
    nmcli radio wifi
    ```
 
 2. Enable Wi-Fi:
 
-   ```sh
+   ```shell
    nmcli radio wifi on
    ```

@@ -7,25 +7,25 @@
 
 1. Start the `iwd` interactive shell to manage your Wi-Fi:
 
-   ```sh
+   ```shell
    iwctl
    ```
 
 2. List available networks:
 
-   ```sh
+   ```shell
    station wlan0 get-networks
    ```
 
 3. Connect to your desired network:
 
-   ```sh
+   ```shell
    station wlan0 connect "your_wifi_name"
    ```
 
 4. To exit the `iwd` interactive shell:
 
-   ```sh
+   ```shell
    exit
    ```
 
@@ -33,19 +33,19 @@
 
 - List all wireless devices:
 
-  ```sh
+  ```shell
   device list
   ```
 
 - List all wireless adapters:
 
-  ```sh
+  ```shell
   adapter list
   ```
 
 - Disconnect from a Wi-Fi network:
 
-  ```sh
+  ```shell
   station wlan0 disconnect
   ```
 
@@ -56,19 +56,19 @@
 
 1. To see general information about the device like the MAC address:
 
-   ```sh
+   ```shell
    device wlan0 show
    ```
 
 2. To view the connection details:
 
-   ```sh
+   ```shell
    station wlan0 show
    ```
 
 3. To see detailed information about the adapter:
 
-   ```sh
+   ```shell
    adapter phy0 show
    ```
 
@@ -79,13 +79,13 @@
 
 1. First, make sure that the adapter is powered on using the following command:
 
-   ```sh
+   ```shell
    adapter phy0 set-property Powered on
    ```
 
 2. Then, power on the wireless device itself:
 
-   ```sh
+   ```shell
    device wlan0 set-property Powered on
    ```
 

@@ -7,7 +7,7 @@
 
 1. Install the required packages:
 
-   ```sh
+   ```shell
    sudo pacman -S hdparm smartmontools
    ```
 
@@ -19,11 +19,11 @@
 ## Checking Hard Drive Properties with `hdparm`
 
 1. List all drives:
-   ```sh
+   ```shell
    lsblk
    ```
 2. Check basic drive information:
-   ```sh
+   ```shell
    sudo hdparm -I /dev/sdX
    ```
    Replace `sdX` with your actual drive (e.g., `sda`).
@@ -34,23 +34,23 @@
 ## Checking Drive Health with `smartctl` (Simple)
 
 1. Check if S.M.A.R.T is supported and enabled on your drive:
-   ```sh
+   ```shell
    sudo smartctl -i /dev/sdX
    ```
 2. Get an overall health summary:
-   ```sh
+   ```shell
    sudo smartctl -H /dev/sdX
    ```
 
 ## Checking Drive Health with `smartctl` (Advanced)
 
 1. Check detailed S.M.A.R.T. data:
-   ```sh
+   ```shell
    sudo smartctl -a /dev/sdX
    ```
 2. Perform a short self-test:
 
-   ```sh
+   ```shell
    sudo smartctl -t short /dev/sdX
    ```
 
@@ -58,7 +58,7 @@
    > You can also perform a `long` self-test.
 
 3. View test results:
-   ```sh
+   ```shell
    sudo smartctl -l selftest /dev/sdX
    ```
 
@@ -68,17 +68,17 @@
 > TRIM improves SSD longevity and speed by clearing unused data blocks.
 
 > [!IMPORTANT]
-> `hdparm` works for SATA drives but doesn't work well with NVMe drives.
+> The tool `hdparm` works for SATA drives but doesn't work well with NVMe drives.
 
 1. Check if your drive supports TRIM:
-   ```sh
+   ```shell
    sudo hdparm -I /dev/sdX | grep TRIM
    ```
 2. Manually run TRIM:
-   ```sh
+   ```shell
    sudo fstrim -v /
    ```
 3. Enable automatic TRIM:
-   ```sh
+   ```shell
    sudo systemctl enable --now fstrim.timer
    ```

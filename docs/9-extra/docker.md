@@ -7,7 +7,7 @@
 
 1. Install Docker and Docker Compose packages:
 
-   ```sh
+   ```shell
    sudo pacman -S docker docker-compose docker-buildx
    ```
 
@@ -18,25 +18,25 @@
 
 2. Enable and start the Docker service:
 
-   ```sh
+   ```shell
    sudo systemctl enable --now docker
    ```
 
 3. Add your user to the Docker group (so you can run Docker without `sudo`):
 
-   ```sh
+   ```shell
    sudo usermod -aG docker $(whoami)
    ```
 
 4. Restart your system to apply group changes:
 
-   ```sh
+   ```shell
    sudo reboot now
    ```
 
 > [!TIP]
 > If you face issues with Docker, check if the service is running:
 
-```sh
+```shell
 sudo systemctl status docker
 ```

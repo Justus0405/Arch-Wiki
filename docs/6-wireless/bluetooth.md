@@ -7,7 +7,7 @@
 
 1. Install Bluetooth packages:
 
-   ```sh
+   ```shell
    sudo pacman -S  bluez bluez-utils blueman
    ```
 
@@ -21,7 +21,7 @@
 
 2. Enable and start the Bluetooth service:
 
-   ```sh
+   ```shell
    sudo systemctl enable --now bluetooth.service
    ```
 

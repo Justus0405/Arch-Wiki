@@ -10,14 +10,14 @@
 
 1. Start `dhcpcd` for your interface and make it start on boot:
 
-   ```sh
+   ```shell
    sudo systemctl enable --now dhcpcd@ensp0
    ```
 
 > [!IMPORTANT]
 > Replace `ensp0` with your interface name. You can find your interface name with:
 >
-> ```sh
+> ```shell
 > ip link
 > ```
 
@@ -25,12 +25,12 @@
 
 - Check if `dhcpcd` is running:
 
-  ```sh
+  ```shell
   sudo systemctl status dhcpcd@ensp0
   ```
 
 - Manually stop `dhcpcd` from running and starting on boot:
 
-  ```sh
+  ```shell
   sudo systemctl disable --now dhcpcd@ensp0
   ```

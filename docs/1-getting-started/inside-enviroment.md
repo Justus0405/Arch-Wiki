@@ -60,6 +60,7 @@ This activates the multilib repository, which is required if you want to run 32-
 
 > [!INFO]
 > In Summary:
+>
 > - `ILoveCandy` → Adds visual effects to downloads.
 > - `ParallelDownloads` → Enables faster downloads.
 > - `multilib` → Adds 32-bit support (for apps like Steam).
@@ -137,7 +138,7 @@ echo "KEYMAP=de" > /etc/vconsole.conf
 ## 17. Create a New User
 
 ```shell
-useradd -m -G wheel,power,storage,video,audio -s /bin/bash justus
+useradd -m -G wheel,power,storage,render,video,audio -s /bin/bash justus
 ```
 
 ## 18. Set the user’s password:
