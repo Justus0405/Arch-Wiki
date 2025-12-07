@@ -7,3 +7,5 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+    volumes:
+      - "./docs:/home/node/arch-wiki/docs"
