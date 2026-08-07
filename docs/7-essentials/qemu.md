@@ -8,7 +8,7 @@
 1. Install required packages:
 
    ```shell
-   sudo pacman -S --needed qemu-full virt-manager virt-viewer libguestfs edk2-ovmf dmidecode dnsmasq vde2 bridge-utils openbsd-netcat ebtables iptables-nft
+   sudo pacman -S --needed qemu-full virt-manager virt-viewer libguestfs edk2-ovmf dmidecode dnsmasq vde2 bridge-utils openbsd-netcat iptables-nft
    ```
 
 > [!INFO] Package Info:
@@ -23,26 +23,21 @@
 > - `vde2` → Virtual network switch for advanced networking.
 > - `bridge-utils` → Tools for bridging network interfaces.
 > - `openbsd-netcat` → Netcat implementation for networking tasks.
-> - `ebtables` → Controls Ethernet bridge firewall rules.
 > - `iptables-nft` → Packet filtering framework for networking.
 
 2. Enable and start the libvirt service:
    ```shell
-   sudo systemctl enable --now libvirtd
+   sudo systemctl enable --now libvirtd virtqemud virtnetworkd virtstoraged virtnodedevd
    ```
 3. Add your user to the libvirt group:
    ```shell
    sudo usermod -aG libvirt $(whoami)
    ```
-4. Restart the libvirt service:
-   ```shell
-   sudo systemctl restart libvirtd
-   ```
-5. Enable autostart for the default network:
+4. Enable autostart for the default network:
    ```shell
    sudo virsh net-autostart default
    ```
-6. Reboot your system:
+5. Reboot your system:
    ```shell
    sudo reboot now
    ```
