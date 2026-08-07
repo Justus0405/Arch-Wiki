@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@catppuccin/vitepress": "^0.1.2",
-    "vitepress": "^2.0.0-alpha.16"
+    "vitepress": "^2.0.0-alpha.19"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs --host --port 8080",
