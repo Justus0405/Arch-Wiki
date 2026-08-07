@@ -29,7 +29,7 @@ sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia nvidia-settings l
 - Remove `kms` from the `HOOKS` line to avoid conflicts. It might look something like this:
 
   ```ini
-  HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
+  HOOKS=(base udev autodetect microcode modconf block filesystems fsck)
   ```
 
 Save and exit the file (Ctrl + X, then Y, then Enter).
